@@ -2,3 +2,4 @@
 venv
 staticfiles
 mc*.md
+.env

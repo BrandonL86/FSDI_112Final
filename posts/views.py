@@ -21,9 +21,7 @@ class ArchivePostListView(LoginRequiredMixin, ListView):
         context = super().get_archived_data(**kwargs)
         archived = Status.objects.get(name="archived")
         context["post_list"] = Post.objects.filter(
-            status=archived
-            ).filter(
-            author=self.request.user
+        status=archived
         ).order_by("created_on").reverse()
         return context
 

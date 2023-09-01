@@ -4,8 +4,9 @@
 {% block title %} Posts {% endblock %}
 
 {% block content %}
-
+<div class="post">
     <h1>Posts</h1>
+    <br>
         {% for post in post_list %}
             <div class="card">
                 <div class="cardbody">
@@ -17,4 +18,5 @@
                     </div>
                 </a>
                 {% endfor %}
+</div>
     {% endblock content %}

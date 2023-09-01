@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block title %}Log In {% endblock title %}
 
 {% block content %}
-<h1>Login</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" class="btn btn-success" value="Log in">
-</form>
+<div class="login">
+    <h1>Login</h1>
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-success" value="Log in">
+    </form>
+    <br>
+    <small>did you forget your password?
+        <a href="{% url 'password_reset' %}">
+            Click here to reset.
+        </a>
+    </small>
+</div>
 {% endblock content %}
